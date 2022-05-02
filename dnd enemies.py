@@ -48,6 +48,7 @@ class EnemyBase(ABC):
     @abstractmethod
     def Race(self) -> Race: ...
 
+
     # def __init__(self, Class, Weapon, Stats, Speed):
     #     self.Class: Class = Class
     #     self.Weapon: Weapon = Weapon
@@ -57,8 +58,10 @@ class EnemyBase(ABC):
 class HumanEnemy(EnemyBase):
     @property
     def Race(self): return Race.Humans
+
+
     @property
-    def Weapon(self): return Weapon.Humans__init__(self,10,1,"s")
+    def Weapon(self): return Weapon.__init__(self, 10, 10, "salshing")
 
 class ElfEnemy(EnemyBase):
     @property
@@ -98,5 +101,5 @@ factory = EnemyFactory(HumanEnemyCreator())
 i = 0
 while i < 10:
     enemy = factory.createEnemy()
-    print('Enemy', i, enemy.Race)
+    print('Enemy', i, enemy.Race, HumanEnemy.Weapon)
     i = i+1
