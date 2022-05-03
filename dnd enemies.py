@@ -61,15 +61,21 @@ class HumanEnemy(EnemyBase):
 
 
     @property
-    def Weapon(self): return Weapon.__init__(self, 10, 10, "salshing")
+    def Weapon(self): return Weapon.__init__(self, 10, 5, "salshing")
 
 class ElfEnemy(EnemyBase):
     @property
     def Race(self): return Race.Elf
+    
+    @property
+    def Weapon(self): return Weapon(8, 5, WeaponType.Piercing)
 
 class OrcEnemy(EnemyBase):
     @property
     def Race(self): return Race.Orc
+    
+    @property
+    def Weapon(self): return Weapon(12, 5, WeaponType.Bludgeoning)
 
 class EnemyCreatorBase(ABC):
 
@@ -101,5 +107,5 @@ factory = EnemyFactory(HumanEnemyCreator())
 i = 0
 while i < 10:
     enemy = factory.createEnemy()
-    print('Enemy', i, enemy.Race, HumanEnemy.Weapon)
+    print('Enemy', i, enemy.Race, enemy.Weapon.Damage,enemy.Weapon.Reach,enemy.Weapon.Type)
     i = i+1
