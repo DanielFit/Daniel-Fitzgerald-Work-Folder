@@ -1,4 +1,4 @@
-"""The purpose of this code is to take a list of int and see if which two int's will equal a certain target int"""
+"""The purpose of this code is to take a list of int and see which two from the list when summed will equal a certain target int"""
 
 
 
